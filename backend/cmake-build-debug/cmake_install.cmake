@@ -1,4 +1,4 @@
-# Install script for directory: /Users/gladis/CLionProjects/Bartlomiej-Gladys-gr52-repo/Projekt/backend
+# Install script for directory: /Users/i344762/Coding/C++/canvas-from-cpp-stream/backend
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/gladis/CLionProjects/Bartlomiej-Gladys-gr52-repo/Projekt/backend/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/i344762/Coding/C++/canvas-from-cpp-stream/backend/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

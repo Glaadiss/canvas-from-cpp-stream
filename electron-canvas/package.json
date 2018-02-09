@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "cmake --build ./../backend/cmake-build-debug --target backend -- -j 4",
     "start": "npx electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "devStart": "nodemon --watch * --exec 'npm start' "

@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/gladis/CLionProjects/Bartlomiej-Gladys-gr52-repo/Projekt/backend/json.hh
+/Users/i344762/Coding/C++/canvas-from-cpp-stream/backend/json.hh
 algorithm
 -
 array
@@ -62,7 +62,7 @@ valarray
 vector
 -
 
-/Users/gladis/CLionProjects/Bartlomiej-Gladys-gr52-repo/Projekt/backend/main.cpp
+/Users/i344762/Coding/C++/canvas-from-cpp-stream/backend/main.cpp
 iostream
 -
 unistd.h
@@ -72,5 +72,5 @@ stdlib.h
 time.h
 -
 json.hh
-/Users/gladis/CLionProjects/Bartlomiej-Gladys-gr52-repo/Projekt/backend/json.hh
+/Users/i344762/Coding/C++/canvas-from-cpp-stream/backend/json.hh
 

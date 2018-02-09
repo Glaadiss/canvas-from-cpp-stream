@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/gladis/CLionProjects/Bartlomiej-Gladys-gr52-repo/Projekt/backend/main.cpp" "/Users/gladis/CLionProjects/Bartlomiej-Gladys-gr52-repo/Projekt/backend/cmake-build-debug/CMakeFiles/backend.dir/main.cpp.o"
+  "/Users/i344762/Coding/C++/canvas-from-cpp-stream/backend/main.cpp" "/Users/i344762/Coding/C++/canvas-from-cpp-stream/backend/cmake-build-debug/CMakeFiles/backend.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
