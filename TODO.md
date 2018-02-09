@@ -1,1 +1,1 @@
-Poczytać czy nie trzeba tez zdalnie amykać child processu w ktorym dziala c++
+Poczytać czy nie trzeba tez zdalnie zamykać child processu w ktorym dziala c++

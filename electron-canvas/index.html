@@ -1,41 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Playground</title>
-  </head>
-  <body>
-    <canvas id="playground" style="background: green">
-    </canvas>
-    <script>
-      
-      function init(){
-        const canvas = document.getElementById("playground");
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        const ctx = canvas.getContext("2d");
-        const fillStyle = "red";
-        ctx.fillStyle = fillStyle;
-        return {ctx, canvas};
-      }
 
-      const {ctx, canvas} = init();
+<head>
+  <meta charset="UTF-8">
+  <title>Playground</title>
+</head>
 
-      function spawnBackend() {
-        const { spawn } = require('child_process');
-        const backend = spawn("../backend/cmake-build-debug/backend");
-        backend.stdout.on("data", data => {
-          const obj = JSON.parse(data);
-          const {x, y, height, width } = obj;
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          ctx.fillRect(x, y, height, width);
-        });
-        backend.stdout.on("error", data => {
-          console.log(`error: ${data}`);
-        });
-      }
+<body>
+  <canvas id="playground" style="background: green"></canvas>
+  <script src="canvas.js"></script>
+</body>
 
-      spawnBackend();
-    </script>
-  </body>
 </html>
