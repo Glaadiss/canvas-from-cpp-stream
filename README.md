@@ -4,10 +4,16 @@ Aby móc skompilować kod tego programu potrzebujesz zainstalowanych:
 * cmake
 
 Aby pobrać zaleznosci oraz skompilowac czesc napisana w C++ przejdz do katalogu electron-canvas/ i uzyj:
-	npm install 
+```bash
+npm install 
+```
 
 Żeby tylko kompilować program w C++ uzyj
-	npm run postinstall
+```bash
+npm run postinstall
+```
 
 Zeby odpalic program
-	npm start
+```bash
+npm start
+```
