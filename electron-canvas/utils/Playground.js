@@ -7,7 +7,7 @@ class Playground {
   }
 
   CLEAR(x, y, level) {
-    this.doAction(x, y, level, "green");
+    this.doAction(x, y, level * 5, "green");
   }
 
   PEE(x, y, level) {

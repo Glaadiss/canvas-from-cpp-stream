@@ -155,41 +155,21 @@ Animal Animal::operator+(const Animal &animal)
 #pragma region Class methods
 void Animal::DoAction()
 {
-	//	Console &console = Console::GetInstance();
+	Action action = ActionInfo(0);
+	int random_number = rand() % 100;
+	int newFunctionIndex = 0;
+	int sum = action.probability;
 
-	//if (actionActualFrame == actionFrameNumber)
-	//{
-		Action action = ActionInfo(0);
-		int random_number = rand() % 100;
-		int newFunctionIndex = 0;
-		int sum = action.probability;
-
-		while (random_number > sum)
-		{
-			action = ActionInfo(++newFunctionIndex);
-			sum += action.probability;
-		}
-
-		currentActionFunction = action.actionFunction;
-		//actionFrameNumber = action.frameNumber;
-		actionText = action.actionText;
-		//actionActualFrame = 0;
-	//}
-
-	// colision detection
-	Playground &playground = Playground::GetInstance();
-	Animal &colidingAnimal = playground.AnimalCollidesWith(*this);
-
-	if ((&colidingAnimal != this) && (currentActionFunction != &Animal::ActionCollision))
+	while (random_number > sum)
 	{
-		currentActionFunction = &Animal::ActionCollision;
-		//actionFrameNumber = 200;
-		//actionActualFrame = 0;
+		action = ActionInfo(++newFunctionIndex);
+		sum += action.probability;
 	}
 
+	currentActionFunction = action.actionFunction;
+	actionText = action.actionText;
 
 	(this->*currentActionFunction)();
-	//actionActualFrame++;
 }
 
 Animal::Action Animal::ActionInfo(int index)
@@ -197,20 +177,20 @@ Animal::Action Animal::ActionInfo(int index)
 	return Action{0, "fake", 0, nullptr};
 }
 
-void Animal::ActionThinking() {}
-void Animal::ActionSpecial() {
+void Animal::ActionThinking()
+{
+	Console &console = Console::GetInstance();
+	console.animalThinking(*this);
+}
+void Animal::ActionSpecial()
+{
 	Console &console = Console::GetInstance();
 	console.specialAction(*this);
 }
-void Animal::ActionSleeping() {}
-void Animal::ActionCollision()
+void Animal::ActionSleeping()
 {
-	actionText = "Collision " + to_string(actionActualFrame);
-	if (actionActualFrame % 190 == 0)
-	{
-		x = x + 1.0;
-		y = y + 1.0;
-	}
+	Console &console = Console::GetInstance();
+	console.animalSleeping(*this);
 }
 
 void Animal::ActionMoving()
@@ -221,17 +201,10 @@ void Animal::ActionMoving()
 	int dx = 5 + (rand() % (console.GetWidth() - 50));
 	int dy = 5 + (rand() % (console.GetHeight() - 20));
 
-	/*if (x + dx < 0 || x + dx > (console.GetWidth() - 1))
-		dx = -dx;
-
-	if (y + dy < 0 || y + dy > (console.GetHeight() - 1))
-		dy = -dy;*/
-
 	x = dx;
 	y = dy;
 
 	console.moveAnimal(*this);
-
 }
 
 string Animal::GetInfo()

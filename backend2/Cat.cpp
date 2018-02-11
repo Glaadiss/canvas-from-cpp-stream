@@ -14,19 +14,10 @@ Cat::Cat(string name) : Cat(name, 0, true)
 }
 
 Cat::Cat(std::string name, int age, bool isMale) : Animal(name, age, isMale) {}
-/* {
-	color = FOREGROUND_BLUE;
-} */
 
 Cat::Cat(const Cat &cat) : Animal(cat) {}
-/* {
-	color = FOREGROUND_BLUE;
-} */
 
 Cat::Cat(Cat &&cat) : Animal(move(cat)) {}
-/* {
-	color = FOREGROUND_BLUE;
-} */
 
 Cat::~Cat() {}
 
@@ -50,7 +41,6 @@ Cat &Cat::operator=(Cat &&cat)
 string Cat::GetInfo()
 {
 	return "Cat " + GetName() + " [" + actionText + "]";
-	;
 }
 
 void Cat::PrintInfo()
@@ -64,14 +54,10 @@ string Cat::GetType()
 }
 #pragma endregion
 
-#pragma region Metods: Cat actions
+#pragma region Metods : Cat actions
 Animal::Action Cat::ActionInfo(int index)
 {
 	return actionInfo[index];
-}
-
-void Cat::ActionThinking() {
-
 }
 
 #pragma endregion

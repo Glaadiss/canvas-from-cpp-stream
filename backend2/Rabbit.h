@@ -9,8 +9,7 @@ class Rabbit : public Animal
 		{1, "thinking", 1, &Animal::ActionThinking},
 		{60, "jumping", 200, &Animal::ActionMoving},
 		{20, "eating", 100, &Animal::ActionSpecial},
-		{19, "sleeping", 100, &Animal::ActionSleeping},
-		{0, "collision", 100, &Animal::ActionCollision}};
+		{19, "sleeping", 100, &Animal::ActionSleeping}};
 
   public:
 	// konstruktory
@@ -27,7 +26,6 @@ class Rabbit : public Animal
 
 	// Rabbit acctions
 	virtual Action ActionInfo(int index);
-	virtual void ActionThinking();
 
 	// Pozosta�e metody
 	virtual std::string GetInfo();

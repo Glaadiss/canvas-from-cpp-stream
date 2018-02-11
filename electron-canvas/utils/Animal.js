@@ -76,6 +76,19 @@ module.exports = class Animal {
     this.specialActionLoop("PEE");
     this.specialActionLoop("CLEAR");
     this.specialActionLoop("RABBIT");
-    this.ctx.fillText(this.type + " " + this.name, this.x, this.y);
+    this.ctx.fillText(
+      `${this.type} ${this.name} : ${actionsDesc.get(this.action)}`,
+      this.x,
+      this.y
+    );
   }
 };
+
+actionsDesc = new Map([
+  ["PEE", "peeing"],
+  ["CLEAR", "repairing"],
+  ["RABBIT", "pooping"],
+  ["MOVE", "running"],
+  ["THINK", "thinking"],
+  [null, "sleeping"]
+])

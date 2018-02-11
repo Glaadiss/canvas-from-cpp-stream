@@ -53,6 +53,20 @@ on("move", move => {
   else console.log(`animal of name ${name} not found! can't move`);
 });
 
+on("think", action => {
+  const { name } = action;
+  const animal = findAnimal(name);
+  if (animal) animal.action = "THINK";
+  else console.log(`animal of name ${name} not found! can't move`);
+})
+
+on("sleep", action => {
+  const { name } = action;
+  const animal = findAnimal(name);
+  if (animal) animal.action = null;
+  else console.log(`animal of name ${name} not found! can't move`);
+})
+
 loop(function() {
   showPlayground();
   showAnimals();

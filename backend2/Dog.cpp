@@ -5,13 +5,15 @@
 using namespace std;
 
 #pragma region Constructors
-Dog::Dog(): Dog( "Anonymous", 0, true, Breed::Mongrel)
-{}
+Dog::Dog() : Dog("Anonymous", 0, true, Breed::Mongrel)
+{
+}
 
-Dog::Dog(string name) : Dog( name, 0, true, Breed::Mongrel)
-{}
+Dog::Dog(string name) : Dog(name, 0, true, Breed::Mongrel)
+{
+}
 
-Dog::Dog(std::string name, int age, bool isMale, Breed &breed ) : Animal(name, age, isMale), breed(breed)
+Dog::Dog(std::string name, int age, bool isMale, Breed &breed) : Animal(name, age, isMale), breed(breed)
 {
 	color = 0;
 }
@@ -27,7 +29,8 @@ Dog::Dog(Dog &&dog) : Animal(move(dog)), breed(dog.breed)
 }
 
 Dog::~Dog()
-{}
+{
+}
 #pragma endregion
 
 #pragma region Accessors
@@ -38,7 +41,7 @@ void Dog::SetBreed(Breed &breed)
 }
 
 // Zestaw akcesor�w - getters
-Breed& Dog::GetBreed() const
+Breed &Dog::GetBreed() const
 {
 	return breed;
 }
@@ -56,30 +59,30 @@ int Dog::GetAggresion() const
 #pragma endregion
 
 #pragma region Operators
-Dog& Dog::operator= (const Dog& dog)
+Dog &Dog::operator=(const Dog &dog)
 {
-	Animal::operator= (dog);
+	Animal::operator=(dog);
 	breed = dog.breed;
 	return *this;
 }
 
-Dog& Dog::operator= (Dog&& dog)
+Dog &Dog::operator=(Dog &&dog)
 {
-	Animal::operator= (std::move(dog));
+	Animal::operator=(std::move(dog));
 	breed = dog.breed;
-	return *this; 
+	return *this;
 }
 
 Dog Dog::operator+(const Dog &dog)
 {
-	Animal::operator+ (dog);
+	Animal::operator+(dog);
 
 	Dog puppy("puppy, child of " + name + " & " + dog.name, 0, true, Breed::Mongrel);
 	return move(puppy);
 }
 #pragma endregion
 
-#pragma region Metods: Dog info
+#pragma region Metods : Dog info
 string Dog::GetInfo()
 {
 	return "Dog " + GetName() + " [" + actionText + "]";
@@ -97,17 +100,11 @@ string Dog::GetType()
 
 #pragma endregion
 
-#pragma region Metods: Dog actions
+#pragma region Metods : Dog actions
 Animal::Action Dog::ActionInfo(int index)
 {
 	return actionInfo[index];
 }
-
-void Dog::ActionThinking()
-{
-
-}
-
 
 /*Dog Dog::SimulateFightWith(Dog dog)
 {
@@ -123,7 +120,7 @@ void Dog::FightWith(Dog& dog)
 //	dog.SetPower(dog.GetPower() - dogPower);
 }*/
 
-std::ostream& operator<< (std::ostream& os, const Dog& dog)
+std::ostream &operator<<(std::ostream &os, const Dog &dog)
 {
 	os << dog.GetName();
 	return os;

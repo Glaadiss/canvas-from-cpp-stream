@@ -3,25 +3,23 @@
 #include "Animal.h"
 #include "Console.h"
 
-class Playground	// as singleton
+class Playground // as singleton
 {
-private:
+  private:
 	// Object containers - now one for all
-	std::vector<Animal*> animals;
-public:
+	std::vector<Animal *> animals;
+
+  public:
 	Playground();
 	~Playground();
-	Playground(const Playground&) = delete;
-	Playground& operator=(Playground&) = delete;
+	Playground(const Playground &) = delete;
+	Playground &operator=(Playground &) = delete;
 
-	static Playground& GetInstance();
+	static Playground &GetInstance();
 
 	void AddAnimal(Animal &animal);
-	//void AnimalsDraw();
 	void AnimalsDoAction();
-	Animal& AnimalCollidesWith(Animal& animal);
+	Animal &AnimalCollidesWith(Animal &animal);
 
 	void Simulate();
-
 };
-

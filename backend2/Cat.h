@@ -8,8 +8,7 @@ class Cat : public Animal
 		{1, "thinking", 1, &Animal::ActionThinking},
 		{60, "running", 200, &Animal::ActionMoving},
 		{9, "repairing", 300, &Animal::ActionSpecial},
-		{30, "sleeping", 100, &Animal::ActionSleeping},
-		{0, "collision", 100, &Animal::ActionCollision}};
+		{30, "sleeping", 100, &Animal::ActionSleeping}};
 
   public:
 	// konstruktory
@@ -26,7 +25,6 @@ class Cat : public Animal
 
 	// Cat acctions
 	virtual Action ActionInfo(int index);
-	virtual void ActionThinking();
 
 	// Pozosta�e metody
 	virtual std::string GetInfo();

@@ -4,18 +4,19 @@ using namespace std;
 
 #pragma region Constructors
 Playground::Playground()
-{}
+{
+}
 
 Playground::~Playground()
-{}
+{
+}
 #pragma endregion
 
-Playground& Playground::GetInstance()
+Playground &Playground::GetInstance()
 {
 	static Playground instance;
 	return instance;
 }
-
 
 #pragma region Drawing functions
 void Playground::AddAnimal(Animal &animal)
@@ -25,24 +26,13 @@ void Playground::AddAnimal(Animal &animal)
 	console.createAnimal(animal);
 }
 
-/*void Playground::AnimalsDraw()
-{
-	Console &console = Console::GetInstance();
-	console.BufferPrepare();
-
-	for (auto &animal : animals)
-		console.BufferWrite(animal->x, animal->y, animal->GetInfo(), animal->color );
-
-	console.BufferToScreen();
-}*/
-
 void Playground::AnimalsDoAction()
 {
 	for (auto &animal : animals)
 		animal->DoAction();
 }
 
-Animal& Playground::AnimalCollidesWith(Animal& animal)
+Animal &Playground::AnimalCollidesWith(Animal &animal)
 {
 	for (auto checked_animal : animals)
 		if ((checked_animal != &animal) && ((int)checked_animal->x == (int)animal.x) && ((int)checked_animal->y == (int)animal.y))
@@ -50,8 +40,6 @@ Animal& Playground::AnimalCollidesWith(Animal& animal)
 
 	return animal;
 }
-
-
 
 void Playground::Simulate()
 {
@@ -63,7 +51,7 @@ void Playground::Simulate()
 	{
 		currentTickCount = clock();
 
-		if (currentTickCount - lastCalcTickCount > 1 * CLOCKS_PER_SEC)	// 1 raz na 5 sekund
+		if (currentTickCount - lastCalcTickCount > 1 * CLOCKS_PER_SEC) // 1 raz na 5 sekund
 		{
 			AnimalsDoAction();
 			lastCalcTickCount = clock();
@@ -72,4 +60,3 @@ void Playground::Simulate()
 }
 
 #pragma endregion
-

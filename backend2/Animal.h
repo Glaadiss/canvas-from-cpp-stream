@@ -5,9 +5,7 @@ class Animal
 {
   public:
 	// step characterists
-	float x, y;   // current position
-	float dx, dy; // surrent speed (in 1/100s)
-	int dt;		  // jump characteristics
+	float x, y; // current position
 
 	short color = 0;
 	int actionActualFrame = 0;
@@ -64,7 +62,6 @@ class Animal
 	virtual void ActionMoving();
 	virtual void ActionSpecial();
 	virtual void ActionSleeping();
-	virtual void ActionCollision();
 
 	// Pozosta�e metody
 	virtual std::string GetInfo();

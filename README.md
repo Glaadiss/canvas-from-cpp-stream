@@ -1,9 +1,6 @@
-Tutaj umieszczać projekt
 
-
-Na początek zrób 
+Aby pobrać zaleznosci oraz skompilowac czesc napisana w C++ przejdz do katalogu electron-canvas/ i uzyj:
 	npm install 
-w electron-canvas/ , co zaciagnie dependency do node i skompiluje program w c++
 
 Żeby tylko kompilować program w C++ uzyj
 	npm run postinstall
