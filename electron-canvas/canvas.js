@@ -1,21 +1,7 @@
 const { on } = require("./utils/socketHandler");
 const Animal = require("./utils/Animal");
+const Playground = require("./utils/Playground");
 const { init } = require("./utils/initializer");
-
-class Playground {
-  constructor(ctx) {
-    this.ctx = ctx;
-    this.isPeeing;
-    this.isClearing;
-  }
-
-  clear(x, y) {}
-
-  pee(x, y) {
-    this.ctx.fillStyle = "yellow";
-    this.ctx.fillRect(x, y, 150, 80);
-  }
-}
 
 const { ctx, canvas, animalsCtx, animalsCanvas } = init();
 
@@ -23,12 +9,11 @@ let animals = [];
 const playground = new Playground(ctx);
 
 function showPlayground() {
-  playground.i;
+  playground.ctx.fill();
 }
 
 function showAnimals() {
   animalsCtx.clearRect(0, 0, canvas.width, canvas.height);
-  animalsCtx.drawImage(canvas, 0, 0);
   animals.forEach(animal => animal.show());
 }
 
@@ -37,6 +22,7 @@ function findAnimal(name) {
 }
 
 on("newAnimal", newAnimal => {
+  newAnimal.action = "PEE";
   animals = [...animals, new Animal(newAnimal, animalsCtx, playground)];
 });
 
@@ -52,9 +38,14 @@ on("move", move => {
   animal.move(x, y);
 });
 
+let executeTime = 0;
 function loop() {
-  showPlayground();
-  showAnimals();
+  executeTime++;
+  if (executeTime > 5) {
+    showPlayground();
+    showAnimals();
+    executeTime = 0;
+  }
   window.requestAnimationFrame(loop);
 }
 loop();
