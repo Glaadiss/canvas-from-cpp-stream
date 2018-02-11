@@ -2,6 +2,6 @@ electron-canvas/node_modules/
 backend/cmake-build-debug/
 backend/.idea/
 backend/CMakeFiles  
-backend2/cmake-build-debug/
-backend2/.idea/
-backend2/CMakeFiles  
+backend/Makefile
+backend/CMakeChache.txt
+backend/cmake_install.cmake
