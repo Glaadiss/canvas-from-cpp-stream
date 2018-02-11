@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "cd ./../backend2 && cmake . && make",
+    "postinstall": "cd ./../backend && cmake . && make",
     "start": "npx electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "devStart": "nodemon --watch * --exec 'npm start' "

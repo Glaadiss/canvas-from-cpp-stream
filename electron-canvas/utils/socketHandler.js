@@ -1,11 +1,11 @@
 const splitJSON = data =>
   data
-    .toString()
-    .replace(/}{/g, "}#{")
-    .split("#");
+  .toString()
+  .replace(/}{/g, "}#{")
+  .split("#");
 
 const { spawn, exec } = require("child_process");
-const backend = spawn("./../backend2/backend");
+const backend = spawn("./../backend/backend");
 
 backend.stdout.on("error", data => {
   console.log(`error: ${data}`);
