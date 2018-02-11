@@ -1,14 +1,25 @@
+const img = new Image();
+img.src = "./images/k.png";
+
 class Playground {
   constructor(ctx) {
     this.ctx = ctx;
   }
 
-  clear(x, y, level) {
+  CLEAR(x, y, level) {
     this.doAction(x, y, level, "green");
   }
 
-  pee(x, y, level) {
+  PEE(x, y, level) {
     this.doAction(x, y, level, "yellow");
+  }
+
+  RABBIT(x, y, level) {
+    this.doXD(x, y, level * 2);
+  }
+
+  doXD(x, y, level) {
+    this.ctx.drawImage(img, x - level / 2, y - level / 2, level, level);
   }
 
   doAction(x, y, level, color) {

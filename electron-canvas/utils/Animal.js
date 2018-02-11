@@ -12,16 +12,11 @@ module.exports = class Animal {
     this.action = action;
     this.ctx = ctx;
     this.actionLevel = 1;
-    this.fps = 30;
-    console.log(
-      `New ${this.type} named ${this.name} created! Hurra! On position: ${
-        this.x
-      }, ${this.y} `
-    );
+    this.fps = 90;
   }
 
   move(dstX, dstY) {
-    this.log(dstX, dstY);
+    // this.log(dstX, dstY);
     this.action = "MOVE";
     this.directionX = dstX;
     this.directionY = dstY;
@@ -29,18 +24,34 @@ module.exports = class Animal {
     this.stepY = (dstY - this.y) / this.fps;
   }
 
-  pee() {
-    this.action = "PEE";
+  setAction(action) {
+    this.action = action;
     this.actionLevel = 1;
   }
 
-  shouldPeeing() {
-    return this.action === "PEE" && this.actionLevel < 60;
+  clear() {
+    this.setAction("CLEAR");
   }
 
-  makePee() {
+  pee() {
+    this.setAction("PEE");
+  }
+
+  superSpecial() {
+    this.setAction("RABBIT");
+  }
+
+  isSpecialAction(action) {
+    return this.action === action && this.actionLevel < 60;
+  }
+
+  makeSpecialAction(action) {
     this.actionLevel += 10 / this.fps;
-    this.playgroundConnect.pee(this.x, this.y, this.actionLevel);
+    this.playgroundConnect[action](this.x, this.y, this.actionLevel);
+  }
+
+  specialActionLoop(action) {
+    if (this.isSpecialAction(action)) this.makeSpecialAction(action);
   }
 
   shouldMoving() {
@@ -62,7 +73,9 @@ module.exports = class Animal {
 
   show() {
     if (this.shouldMoving()) this.makeStep();
-    if (this.shouldPeeing()) this.makePee();
+    this.specialActionLoop("PEE");
+    this.specialActionLoop("CLEAR");
+    this.specialActionLoop("RABBIT");
     this.ctx.fillText(this.type + " " + this.name, this.x, this.y);
   }
 };

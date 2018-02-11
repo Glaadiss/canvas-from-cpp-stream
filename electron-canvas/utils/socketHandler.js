@@ -1,9 +1,8 @@
-function splitJSON(data) {
-  return data
+const splitJSON = data =>
+  data
     .toString()
     .replace(/}{/g, "}#{")
     .split("#");
-}
 
 const { spawn } = require("child_process");
 const backend = spawn("./../backend2/backend");
@@ -19,7 +18,7 @@ const on = (desiredEventName, callback) =>
 
 function executeAction(desiredEventName, callback, data) {
   const { eventName, eventData } = JSON.parse(data);
-  console.log(`received event: ${eventName} with data: ${eventData}`);
+  // console.log(`received event: ${eventName} with data: ${eventData}`);
   if (eventName === desiredEventName) callback(eventData);
 }
 

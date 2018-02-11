@@ -35,38 +35,23 @@ on("special", action => {
         animal.pee();
         break;
       case "cat":
-        // DO WHAT CATS DO!
+        animal.clear();
         break;
       case "rabbit":
-        // DO WHAT CATS DO!
+        animal.superSpecial();
         break;
       default:
-        console.log("WEIRD TYPE OF ANIMAL!" + type)
+        console.log("WEIRD TYPE OF ANIMAL!" + type);
     }
-  else
-    console.log(`animal of name ${name} not found! can't do special action`)
+  else console.log(`animal of name ${name} not found! can't do special action`);
 });
 
 on("move", move => {
   const { name, x, y } = move;
   const animal = findAnimal(name);
-  if (animal)
-    animal.move(x, y);
-  else
-    console.log(`animal of name ${name} not found! can't move`)
+  if (animal) animal.move(x, y);
+  else console.log(`animal of name ${name} not found! can't move`);
 });
-
-let executeTime = 0;
-
-/* function loop() {
-  executeTime++;
-  if (executeTime > 1) {
-    showPlayground();
-    showAnimals();
-    executeTime = 0;
-  }
-  window.requestAnimationFrame(loop);
-} */
 
 loop(function() {
   showPlayground();
