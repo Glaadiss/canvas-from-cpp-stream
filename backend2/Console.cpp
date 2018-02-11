@@ -34,7 +34,7 @@ void Console::createAnimal(Animal &animal)
 	std::cout << newAnimal.dump() << std::flush;
 }
 
-void Console::moveAnimal(Animal animal)
+void Console::moveAnimal(Animal &animal)
 {
 	json move = {
 		{"eventName", "move"},
@@ -50,6 +50,8 @@ void Console::moveAnimal(Animal animal)
 
 	std::cout << move.dump() << std::flush;
 }
+
+
 
 int Console::GetWidth()
 {

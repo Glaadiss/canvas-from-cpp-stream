@@ -69,9 +69,9 @@ Animal::Action Rabbit::ActionInfo(int index)
 
 void Rabbit::ActionThinking()
 {
-	/*dx = -3.0f + 6.0f * static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-	dy = -3.0f + 6.0f * static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-	dt = 10;*/
+	dx = static_cast <float> (rand() % 500);
+	dy = static_cast <float> (rand() % 500);
+	dt = 10;
 }
 
 

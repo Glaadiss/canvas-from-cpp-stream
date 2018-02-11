@@ -105,9 +105,9 @@ Animal::Action Dog::ActionInfo(int index)
 
 void Dog::ActionThinking()
 {
-	/*dx = -0.5f + static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-	dy = -0.5f + static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-	dt = 1;*/
+	dx = static_cast <float> (rand() % 300);
+	dy = static_cast <float> (rand() % 300);
+	dt = 1;
 }
 
 

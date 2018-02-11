@@ -53,31 +53,23 @@ Animal& Playground::AnimalCollidesWith(Animal& animal)
 
 
 
-/*void Playground::Simulate()
+void Playground::Simulate()
 {
 	Console &console = Console::GetInstance();
-	console.HideCursor();
-	DWORD currentTickCount;
-	DWORD lastCalcTickCount = 0;
-	DWORD lastFrameTickCount = 0;
+	time_t currentTickCount;
+	time_t lastCalcTickCount = 0;
 
-	while (!console.KeyPressed(VK_ESCAPE))
+	while (true)
 	{
-		currentTickCount = GetTickCount();	//tickcount in ms
+		currentTickCount = clock();
 
-		if (currentTickCount - lastCalcTickCount> 10)	// 100 razy na sekund�
+		if (currentTickCount - lastCalcTickCount > 5 * CLOCKS_PER_SEC)	// 1 raz na sekundę
 		{
 			AnimalsDoAction();
-			lastCalcTickCount = GetTickCount();
-		}
-
-		if (currentTickCount - lastFrameTickCount > 20 )
-		{
-			AnimalsDraw();
-			lastFrameTickCount = GetTickCount();
+			lastCalcTickCount = clock();
 		}
 	}
-}*/
+}
 
 #pragma endregion
 

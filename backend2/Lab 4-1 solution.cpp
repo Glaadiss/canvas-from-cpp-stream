@@ -12,7 +12,7 @@ int main()
 	// create and configure console
 	Console &console = Console::GetInstance();
 	//console.SetSize(120, 50);
-
+	srand(time(NULL));
 	// create animals
 	Dog fafik("Fafik");
 	Dog puszek("Puszek");
@@ -32,10 +32,8 @@ int main()
 	playground.AddAnimal(rysio);
 
 	// simulation main loop
-	while (true)
-	{
-	};
-	//playground.Simulate();
+
+	playground.Simulate();
 
 	return 0;
 }

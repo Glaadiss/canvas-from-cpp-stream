@@ -71,9 +71,9 @@ Animal::Action Cat::ActionInfo(int index)
 }
 
 void Cat::ActionThinking() {
-/*	dx = -1.0f + 2.0f * static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-	dy = -1.0f + 2.0f * static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-	dt = 1;*/
+	dx = static_cast <float> (rand() % 400);
+	dy = static_cast <float> (rand() % 400);
+	dt = 1;
 }
 
 void Cat::ActionSpecial()

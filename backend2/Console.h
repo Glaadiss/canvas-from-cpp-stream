@@ -16,7 +16,7 @@ class Console
 	static Console &GetInstance();
 
 	void createAnimal(Animal &animal);
-	void moveAnimal(Animal animal);
+	void moveAnimal(Animal &animal);
 
 	int GetWidth();
 	int GetHeight();

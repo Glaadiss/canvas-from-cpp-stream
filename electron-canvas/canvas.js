@@ -38,7 +38,10 @@ on("peeing", action => {
 on("move", move => {
   const { name, x, y } = move;
   const animal = findAnimal(name);
-  animal.move(x, y);
+  if (animal)
+    animal.move(x, y);
+  else
+    console.log(`animal of name ${name} not found! can't move`)
 });
 
 function loop() {

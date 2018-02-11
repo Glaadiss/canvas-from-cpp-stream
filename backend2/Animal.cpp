@@ -157,8 +157,8 @@ void Animal::DoAction()
 {
 	//	Console &console = Console::GetInstance();
 
-	if (actionActualFrame == actionFrameNumber)
-	{
+	//if (actionActualFrame == actionFrameNumber)
+	//{
 		Action action = ActionInfo(0);
 		int random_number = rand() % 100;
 		int newFunctionIndex = 0;
@@ -171,10 +171,10 @@ void Animal::DoAction()
 		}
 
 		currentActionFunction = action.actionFunction;
-		actionFrameNumber = action.frameNumber;
+		//actionFrameNumber = action.frameNumber;
 		actionText = action.actionText;
-		actionActualFrame = 0;
-	}
+		//actionActualFrame = 0;
+	//}
 
 	// colision detection
 	Playground &playground = Playground::GetInstance();
@@ -183,12 +183,13 @@ void Animal::DoAction()
 	if ((&colidingAnimal != this) && (currentActionFunction != &Animal::ActionCollision))
 	{
 		currentActionFunction = &Animal::ActionCollision;
-		actionFrameNumber = 200;
-		actionActualFrame = 0;
+		//actionFrameNumber = 200;
+		//actionActualFrame = 0;
 	}
 
+
 	(this->*currentActionFunction)();
-	actionActualFrame++;
+	//actionActualFrame++;
 }
 
 Animal::Action Animal::ActionInfo(int index)
@@ -212,19 +213,19 @@ void Animal::ActionCollision()
 void Animal::ActionMoving()
 {
 
-	/* Console &console = Console::GetInstance();
+	Console &console = Console::GetInstance();
 
-	if (actionActualFrame % dt == 0)
-	{
-		if (x + dx < 0 || x + dx > (console.GetWidth() - 1))
-			dx = -dx;
+	if (x + dx < 0 || x + dx > (console.GetWidth() - 1))
+		dx = -dx;
 
-		if (y + dy < 0 || y + dy > (console.GetHeight() - 1))
-			dy = -dy;
+	if (y + dy < 0 || y + dy > (console.GetHeight() - 1))
+		dy = -dy;
 
-		x += dx;
-		y += dy;
-	} */
+	x += dx;
+	y += dy;
+
+	console.moveAnimal(*this);
+
 }
 
 string Animal::GetInfo()
