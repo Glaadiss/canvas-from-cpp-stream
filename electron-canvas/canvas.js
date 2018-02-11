@@ -1,23 +1,19 @@
 const { on } = require("./utils/socketHandler");
 const Animal = require("./utils/Animal");
+const Playground = require("./utils/Playground");
 const { init } = require("./utils/initializer");
-
-class Playground {
-  constructor(ctx) {
-    this.ctx = ctx;
-  }
-
-  pee(x, y) {}
-}
 
 const { ctx, canvas, animalsCtx, animalsCanvas } = init();
 
 let animals = [];
 const playground = new Playground(ctx);
 
-function show() {
+function showPlayground() {
+  playground.ctx.fill();
+}
+
+function showAnimals() {
   animalsCtx.clearRect(0, 0, canvas.width, canvas.height);
-  animalsCtx.drawImage(canvas, 0, 0);
   animals.forEach(animal => animal.show());
 }
 
@@ -26,7 +22,8 @@ function findAnimal(name) {
 }
 
 on("newAnimal", newAnimal => {
-  animals = [...animals, new Animal(newAnimal, animalsCtx)];
+  newAnimal.action = "PEE";
+  animals = [...animals, new Animal(newAnimal, animalsCtx, playground)];
 });
 
 on("peeing", action => {
@@ -44,8 +41,14 @@ on("move", move => {
     console.log(`animal of name ${name} not found! can't move`)
 });
 
+let executeTime = 0;
 function loop() {
-  show();
+  executeTime++;
+  if (executeTime > 1) {
+    showPlayground();
+    showAnimals();
+    executeTime = 0;
+  }
   window.requestAnimationFrame(loop);
 }
 loop();

@@ -11,8 +11,13 @@ module.exports = class Animal {
     this.stepY = 0;
     this.action = action;
     this.ctx = ctx;
+    this.actionLevel = 1;
     this.fps = 60;
-    console.log(`New ${this.type} named ${this.name} created! Hurra! On position: ${this.x}, ${this.y} `);
+    console.log(
+      `New ${this.type} named ${this.name} created! Hurra! On position: ${
+        this.x
+      }, ${this.y} `
+    );
   }
 
   move(dstX, dstY) {
@@ -26,6 +31,7 @@ module.exports = class Animal {
 
   pee() {
     this.action = "PEE";
+    this.actionLevel = 1;
   }
 
   shouldPeeing() {
@@ -33,7 +39,9 @@ module.exports = class Animal {
   }
 
   makePee() {
-    this.playgroundConnect.pee(this.x, this.y);
+    this.actionLevel += 10 / this.fps;
+    console.log(this.name);
+    this.playgroundConnect.pee(this.x, this.y, this.actionLevel);
   }
 
   shouldMoving() {
