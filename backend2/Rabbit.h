@@ -28,7 +28,6 @@ class Rabbit : public Animal
 	// Rabbit acctions
 	virtual Action ActionInfo(int index);
 	virtual void ActionThinking();
-	virtual void ActionSpecial();
 
 	// Pozosta�e metody
 	virtual std::string GetInfo();

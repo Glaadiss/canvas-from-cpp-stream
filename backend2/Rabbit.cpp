@@ -69,17 +69,8 @@ Animal::Action Rabbit::ActionInfo(int index)
 
 void Rabbit::ActionThinking()
 {
-	dx = static_cast <float> (rand() % 500);
-	dy = static_cast <float> (rand() % 500);
-	dt = 10;
+
 }
 
 
-void Rabbit::ActionSpecial()
-{
-	/*Console &console = Console::GetInstance();
-
-	if (actionActualFrame == 20)	console.BufferFrameAround(x, y, 0, 0);
-	if (actionActualFrame == 80)	console.BufferFrameAround(x, y, 1, 0);*/
-}
 #pragma endregion

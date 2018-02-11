@@ -71,18 +71,7 @@ Animal::Action Cat::ActionInfo(int index)
 }
 
 void Cat::ActionThinking() {
-	dx = static_cast <float> (rand() % 400);
-	dy = static_cast <float> (rand() % 400);
-	dt = 1;
+
 }
 
-void Cat::ActionSpecial()
-{
-	/*Console &console = Console::GetInstance();
-
-	if (actionActualFrame == 50)	console.BufferFrameAround(x, y, 0, BACKGROUND_RED | BACKGROUND_BLUE);
-	if (actionActualFrame == 100)	console.BufferFrameAround(x, y, 1, BACKGROUND_RED | BACKGROUND_BLUE);
-	if (actionActualFrame == 200)	console.BufferFrameAround(x, y, 2, BACKGROUND_RED | BACKGROUND_BLUE);
-	if (actionActualFrame == 290)	console.BufferFrameAround(x, y, 2, BACKGROUND_GREEN);*/
-}
 #pragma endregion

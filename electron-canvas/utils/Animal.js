@@ -12,7 +12,7 @@ module.exports = class Animal {
     this.action = action;
     this.ctx = ctx;
     this.actionLevel = 1;
-    this.fps = 60;
+    this.fps = 30;
     console.log(
       `New ${this.type} named ${this.name} created! Hurra! On position: ${
         this.x
@@ -35,20 +35,19 @@ module.exports = class Animal {
   }
 
   shouldPeeing() {
-    return this.action === "PEE";
+    return this.action === "PEE" && this.actionLevel < 60;
   }
 
   makePee() {
     this.actionLevel += 10 / this.fps;
-    console.log(this.name);
     this.playgroundConnect.pee(this.x, this.y, this.actionLevel);
   }
 
   shouldMoving() {
     return (
       this.action === "MOVE" &&
-      Math.abs(this.directionX - this.x) > this.stepX &&
-      this.directionY !== this.y > this.stepY
+      Math.abs(this.directionX - this.x) > Math.abs(this.stepX) &&
+      Math.abs(this.directionY - this.y) > Math.abs(this.stepY) // this.directionY !== this.y > this.stepY
     );
   }
 

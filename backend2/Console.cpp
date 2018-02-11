@@ -51,7 +51,20 @@ void Console::moveAnimal(Animal &animal)
 	std::cout << move.dump() << std::flush;
 }
 
+void Console::specialAction(Animal &animal) {
+	json special = {
+			{"eventName", "special"},
+			{
+			 "eventData",
+						  {
+								  {"name", animal.GetName()},
+								  {"type", animal.GetType()},
+						  },
+			},
+	};
 
+	std::cout << special.dump() << std::flush;
+}
 
 int Console::GetWidth()
 {

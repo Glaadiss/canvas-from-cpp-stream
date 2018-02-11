@@ -63,7 +63,7 @@ void Playground::Simulate()
 	{
 		currentTickCount = clock();
 
-		if (currentTickCount - lastCalcTickCount > 5 * CLOCKS_PER_SEC)	// 1 raz na sekundę
+		if (currentTickCount - lastCalcTickCount > 3 * CLOCKS_PER_SEC)	// 1 raz na 5 sekund
 		{
 			AnimalsDoAction();
 			lastCalcTickCount = clock();

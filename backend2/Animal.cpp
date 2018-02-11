@@ -198,7 +198,10 @@ Animal::Action Animal::ActionInfo(int index)
 }
 
 void Animal::ActionThinking() {}
-void Animal::ActionSpecial() {}
+void Animal::ActionSpecial() {
+	Console &console = Console::GetInstance();
+	console.specialAction(*this);
+}
 void Animal::ActionSleeping() {}
 void Animal::ActionCollision()
 {
@@ -215,14 +218,17 @@ void Animal::ActionMoving()
 
 	Console &console = Console::GetInstance();
 
-	if (x + dx < 0 || x + dx > (console.GetWidth() - 1))
+	int dx = 5 + (rand() % (console.GetWidth() - 50));
+	int dy = 5 + (rand() % (console.GetHeight() - 20));
+
+	/*if (x + dx < 0 || x + dx > (console.GetWidth() - 1))
 		dx = -dx;
 
 	if (y + dy < 0 || y + dy > (console.GetHeight() - 1))
-		dy = -dy;
+		dy = -dy;*/
 
-	x += dx;
-	y += dy;
+	x = dx;
+	y = dy;
 
 	console.moveAnimal(*this);
 

@@ -2,6 +2,7 @@ const { on } = require("./utils/socketHandler");
 const Animal = require("./utils/Animal");
 const Playground = require("./utils/Playground");
 const { init } = require("./utils/initializer");
+const { loop } = require("./utils/loop");
 
 const { ctx, canvas, animalsCtx, animalsCanvas } = init();
 
@@ -22,14 +23,28 @@ function findAnimal(name) {
 }
 
 on("newAnimal", newAnimal => {
-  newAnimal.action = "PEE";
   animals = [...animals, new Animal(newAnimal, animalsCtx, playground)];
 });
 
-on("peeing", action => {
-  const { name } = action;
+on("special", action => {
+  const { name, type } = action;
   const animal = findAnimal(name);
-  animal.pee();
+  if (animal)
+    switch (type) {
+      case "dog":
+        animal.pee();
+        break;
+      case "cat":
+        // DO WHAT CATS DO!
+        break;
+      case "rabbit":
+        // DO WHAT CATS DO!
+        break;
+      default:
+        console.log("WEIRD TYPE OF ANIMAL!" + type)
+    }
+  else
+    console.log(`animal of name ${name} not found! can't do special action`)
 });
 
 on("move", move => {
@@ -42,7 +57,8 @@ on("move", move => {
 });
 
 let executeTime = 0;
-function loop() {
+
+/* function loop() {
   executeTime++;
   if (executeTime > 1) {
     showPlayground();
@@ -50,5 +66,9 @@ function loop() {
     executeTime = 0;
   }
   window.requestAnimationFrame(loop);
-}
-loop();
+} */
+
+loop(function() {
+  showPlayground();
+  showAnimals();
+}, 60);

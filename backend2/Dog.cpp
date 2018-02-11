@@ -105,18 +105,7 @@ Animal::Action Dog::ActionInfo(int index)
 
 void Dog::ActionThinking()
 {
-	dx = static_cast <float> (rand() % 300);
-	dy = static_cast <float> (rand() % 300);
-	dt = 1;
-}
 
-
-void Dog::ActionSpecial()
-{
-	/*Console &console = Console::GetInstance();
-
-	if (actionActualFrame == 20)	console.BufferFrameAround(x, y, 0, BACKGROUND_RED | BACKGROUND_GREEN);
-	if (actionActualFrame == 80)	console.BufferFrameAround(x, y, 1, BACKGROUND_RED | BACKGROUND_GREEN);*/
 }
 
 

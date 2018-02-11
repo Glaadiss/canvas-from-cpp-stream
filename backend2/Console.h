@@ -17,6 +17,7 @@ class Console
 
 	void createAnimal(Animal &animal);
 	void moveAnimal(Animal &animal);
+	void specialAction(Animal &animal);
 
 	int GetWidth();
 	int GetHeight();
