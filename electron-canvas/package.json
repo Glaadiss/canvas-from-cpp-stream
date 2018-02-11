@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dist": "electron-builder",
     "postinstall": "cd ./../backend && cmake . && make",
     "start": "npx electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,6 +13,8 @@
   "author": "Bartłomiej Gładys, Jakub Dziechciewicz",
   "license": "ISC",
   "devDependencies": {
-    "electron": "1.7.10"
-  }
+    "electron": "1.7.10",
+    "electron-builder": "^19.56.0"
+  },
+  "dependencies": {}
 }

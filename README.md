@@ -1,6 +1,7 @@
 
 Aby móc skompilować kod tego programu potrzebujesz zainstalowanych:
 * npm
+* node.js v8.2.0 and later
 * cmake
 
 Aby pobrać zaleznosci oraz skompilowac czesc napisana w C++ przejdz do katalogu electron-canvas/ i uzyj:
