@@ -5,16 +5,28 @@ const { init } = require("./utils/initializer");
 class Playground {
   constructor(ctx) {
     this.ctx = ctx;
+    this.isPeeing;
+    this.isClearing;
   }
 
-  pee(x, y) {}
+  clear(x, y) {}
+
+  pee(x, y) {
+    this.ctx.fillStyle = "yellow";
+    this.ctx.fillRect(x, y, 150, 80);
+  }
 }
 
 const { ctx, canvas, animalsCtx, animalsCanvas } = init();
 
 let animals = [];
-const Playground = new Playground(ctx);
-function show() {
+const playground = new Playground(ctx);
+
+function showPlayground() {
+  playground.i;
+}
+
+function showAnimals() {
   animalsCtx.clearRect(0, 0, canvas.width, canvas.height);
   animalsCtx.drawImage(canvas, 0, 0);
   animals.forEach(animal => animal.show());
@@ -25,7 +37,7 @@ function findAnimal(name) {
 }
 
 on("newAnimal", newAnimal => {
-  animals = [...animals, new Animal(newAnimal, animalsCtx)];
+  animals = [...animals, new Animal(newAnimal, animalsCtx, playground)];
 });
 
 on("peeing", action => {
@@ -41,7 +53,8 @@ on("move", move => {
 });
 
 function loop() {
-  show();
+  showPlayground();
+  showAnimals();
   window.requestAnimationFrame(loop);
 }
 loop();

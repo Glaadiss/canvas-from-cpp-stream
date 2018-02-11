@@ -1,7 +1,7 @@
 function splitJSON(data) {
   return data
     .toString()
-    .replace("}{", "}#{")
+    .replace(/}{/g, "}#{")
     .split("#");
 }
 
