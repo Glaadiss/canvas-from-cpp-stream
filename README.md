@@ -1,4 +1,8 @@
 
+Aby móc skompilować kod tego programu potrzebujesz zainstalowanych:
+* npm
+* cmake
+
 Aby pobrać zaleznosci oraz skompilowac czesc napisana w C++ przejdz do katalogu electron-canvas/ i uzyj:
 	npm install 
 

@@ -3,5 +3,5 @@ backend/cmake-build-debug/
 backend/.idea/
 backend/CMakeFiles  
 backend/Makefile
-backend/CMakeChache.txt
+backend/CMakeCache.txt
 backend/cmake_install.cmake
