@@ -1,4 +1,0 @@
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/i344762/Coding/C++/canvas-from-cpp-stream/backend
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/i344762/Coding/C++/canvas-from-cpp-stream/backend/cmake-build-debug

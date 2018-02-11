@@ -6,7 +6,7 @@ function splitJSON(data) {
 }
 
 const { spawn } = require("child_process");
-const backend = spawn("./../backend/cmake-build-debug/backend");
+const backend = spawn("./../backend2/backend");
 
 backend.stdout.on("error", data => {
   console.log(`error: ${data}`);
