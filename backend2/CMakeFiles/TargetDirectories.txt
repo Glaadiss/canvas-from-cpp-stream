@@ -1,0 +1,3 @@
+/Users/i344762/Coding/C++/canvas-from-cpp-stream/backend2/CMakeFiles/rebuild_cache.dir
+/Users/i344762/Coding/C++/canvas-from-cpp-stream/backend2/CMakeFiles/edit_cache.dir
+/Users/i344762/Coding/C++/canvas-from-cpp-stream/backend2/CMakeFiles/backend.dir

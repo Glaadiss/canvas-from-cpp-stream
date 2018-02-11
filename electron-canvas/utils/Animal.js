@@ -12,7 +12,7 @@ module.exports = class Animal {
     this.action = action;
     this.ctx = ctx;
     this.fps = 60;
-    // console.log(`New ${this.type} named ${this.name} created! Hurra!`);
+    console.log(`New ${this.type} named ${this.name} created! Hurra! On position: ${this.x}, ${this.y} `);
   }
 
   move(dstX, dstY) {

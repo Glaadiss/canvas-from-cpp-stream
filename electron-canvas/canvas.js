@@ -13,7 +13,8 @@ class Playground {
 const { ctx, canvas, animalsCtx, animalsCanvas } = init();
 
 let animals = [];
-const Playground = new Playground(ctx);
+const playground = new Playground(ctx);
+
 function show() {
   animalsCtx.clearRect(0, 0, canvas.width, canvas.height);
   animalsCtx.drawImage(canvas, 0, 0);
