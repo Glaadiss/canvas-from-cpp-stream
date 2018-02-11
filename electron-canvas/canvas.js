@@ -41,7 +41,7 @@ on("move", move => {
 let executeTime = 0;
 function loop() {
   executeTime++;
-  if (executeTime > 5) {
+  if (executeTime > 1) {
     showPlayground();
     showAnimals();
     executeTime = 0;

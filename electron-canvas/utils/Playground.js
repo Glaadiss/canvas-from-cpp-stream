@@ -4,20 +4,20 @@ class Playground {
   }
 
   clear(x, y, level) {
-    this.ctx.fillStyle = "green";
-    this.ctx.arc(x, y, level, 0, 2 * Math.PI);
-    this.ctx.fill();
+    this.doAction(x, y, level, "green");
   }
 
   pee(x, y, level) {
-    this.ctx.fillStyle = "yellow";
-    this.ctx.beginPath();
-    this.ctx.arc(x, y, level, 0, 2 * Math.PI);
-    this.ctx.strokeStyle = "yellow";
-    this.ctx.stroke();
+    this.doAction(x, y, level, "yellow");
   }
 
-  doAction(x, y, level) {}
+  doAction(x, y, level, color) {
+    this.ctx.fillStyle = color;
+    this.ctx.beginPath();
+    this.ctx.arc(x, y, level, 0, 2 * Math.PI);
+    this.ctx.strokeStyle = color;
+    this.ctx.stroke();
+  }
 }
 
 module.exports = Playground;
