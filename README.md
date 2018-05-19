@@ -1,20 +1,20 @@
 
-Aby móc skompilować kod tego programu potrzebujesz zainstalowanych:
+If you want compile this project, you need:
 * npm
 * node.js v8.2.0 and later
 * cmake
 
-Aby pobrać zaleznosci oraz skompilowac czesc napisana w C++ przejdz do katalogu electron-canvas/ i uzyj:
+To install dependencies and compile c++ code:
 ```bash
 npm install 
 ```
 
-Żeby tylko kompilować program w C++ uzyj
+If you want only compile c++ code:
 ```bash
 npm run postinstall
 ```
 
-Zeby odpalic program
+To run program:
 ```bash
 npm start
 ```
